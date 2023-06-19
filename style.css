@@ -1,48 +1,339 @@
-body *{
+body * {
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.first-section{
+.title {
+    font-size: 164px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 32px;
+}
+
+.circle {
+    background-color: black;
+    height: 164px;
+    width: 164px;
+    border-radius: 82px;
+    padding: 32px;
+    margin: 32px;
+    justify-self: end;
+}
+
+.row{
+    border-bottom: 1px solid grey;
+    padding: 32px;
+}
+
+.center {
+    display: grid;
+    place-items: center;
+
+}
+
+
+
+
+
+/* FIRST SECTION -------------------------------------------- */
+
+.first-section {
     background-color: #ffcc00;
     width: 100vw;
     height: 100vh;
+    display: grid;
+    grid-template-rows: 280px 1fr 150px;
+    grid-template-columns: 280px 1fr 50%;
+    grid-template-areas: "logo . play"
+        ". . play"
+        "info . play";
+}
+
+.logo-img {
+    padding: 32px;
+    width: 100%;
+    grid-area: logo;
+}
+
+.play-btn {
+    grid-area: play;
+    height: 100%;
+    max-width: 100%;
+}
+
+.play-info {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+}
+
+.label {
+    text-transform: uppercase;
+}
+
+.artist {
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.song {
+    font-size: large;
+}
+
+@media (max-width: 768px) {
+    .first-section {
+        grid-template-columns: 100%;
+        grid-template-rows: 280px 1fr 150px;
+        grid-template-areas: "logo" "play" "info";
+    }
+
+    .play-btn {
+        padding: 32px;
+    }
+
+    .logo-img {
+        max-width: 280px;
+    }
+}
+
+/*SECOND SECTION---------------------------------------------*/
+
+.second-section {
+    background-color: #ffcc00;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: "s2-title s2-title s2-circle" 
+                         "j-img j-img fm" 
+                         "online a-img a-img" 
+                         "devices devices devices" 
+                         "z-container z-container z-container";
+}
+
+.s2-title {
+    grid-area: s2-title;
+}
+
+.s2-circle {
+    grid-area: s2-circle;
+}
+
+.j-img {
+    grid-area: j-img;
+    width: 100%;
+    padding: 32px;
+    margin-top: -230px;
+}
+
+.a-img {
+    grid-area: a-img;
+    width: 100%;
+    padding: 32px;
+}
+
+.z-img {
+    flex: 1;
+    padding: 32px;
+    max-width: 50%;
+}
+
+.z-container {
+    grid-area: z-container;
+    display: flex;
+    max-width: 100%;
+}
+
+.fm {
+    grid-area: fm;
+}
+
+.online {
+    grid-area: online;
+}
+
+.row-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.row-column {
+    display: flex;
+    justify-content: space-between;
+}
+
+.row-title {
+    font-size: 100px;
+    margin: 0px;
+}
+
+.devices {
+    grid-area: devices;
+}
+
+@media (max-width: 768px) {
+    .second-section {
+        grid-template-rows: repeat(7, auto);
+        grid-template-columns: 100%;
+        grid-template-areas: "s2-title" 
+                             "j-img" 
+                             "fm" 
+                             "a-img"
+                             "online"
+                             "z-container" 
+                             "devices";
+    }
+    .title{
+        font-size: 110px;
+    }
+    .row-column {
+        flex-direction: column;
+    }
+    .j-img {
+        margin-top: -150px;
+    }
 }
 
 
-.last-section{
+/* THIRD SECTION -------------------------------------------- */
+.third-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas:
+        "s3-title s3-title s3-circle"
+        ". . p1"
+        "p2 p3 ."
+        ". p4 ."
+        ". . p5"
+        "p6 p7 .";
+    gap: 32px;
+}
+
+.day{
+    font-size: 100px;
+    margin: 0px;
+}
+
+
+.p1 {
+    grid-area: p1;
+}
+
+.p2 {
+    grid-area: p2;
+}
+
+.p3 {
+    grid-area: p3;
+}
+
+.p4 {
+    grid-area: p4;
+}
+
+.p5 {
+    grid-area: p5;
+}
+
+.p6 {
+    grid-area: p6;
+}
+
+.p7 {
+    grid-area: p7;
+}
+
+.s3-title {
+    grid-area: s3-title;
+}
+
+.s3-circle {
+    grid-area: s3-circle;
+    
+}
+
+@media (max-width: 768px) {
+    .third-section {
+        grid-template-rows: repeat(8, auto);
+        grid-template-columns: 100%;
+        grid-template-areas: "s3-title" "p1" "p2" "p3" "p4" "p5" "p6" "p7";
+    }
+    .title{
+        font-size: 110px;
+    }
+}
+
+
+/* LAST SECTION -------------------------------------------- */
+.last-section {
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: auto auto;
 }
 
-.mouth{
+.top-link {
+    display: inline-block;
+    width: 60%;
+}
+
+.mouth {
     width: 50vw;
     height: 50vw;
     background-color: #660099;
 }
 
-.arrow{
-    width: 50vw;
-    height: 50vw;
-    background-color: #ff3333; 
+.mouth-img {
+    width: 60%;
 }
 
+.arrow {
+    width: 50vw;
+    height: 50vw;
+    background-color: #ff3333;
+}
+
+.arrow-img {
+    width: 100%;
+}
+
+.arrow-img:hover {
+    animation: arrow-rotation 0.5s linear;
+    animation-fill-mode: forwards;
+}
+
+
+
+@keyframes arrow-rotation {
+    0%{
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-45deg);
+    }
+    
+}
+
+
+
+
 @media (max-width: 768px) {
-    .last-section{
+    .last-section {
         grid-template-rows: auto auto;
         grid-template-columns: auto;
     }
-    
-    .mouth{
+
+    .mouth {
         width: 100vw;
         height: 100vw;
     }
-    
-    .arrow{
+
+    .arrow {
         width: 100vw;
         height: 100vw;
     }
