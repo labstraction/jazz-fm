@@ -197,6 +197,9 @@ body {
     .j-img {
         margin-top: -150px;
     }
+    .s2-circle{
+        display: none;
+    }
 }
 
 
@@ -267,6 +270,9 @@ body {
     .title{
         font-size: 110px;
     }
+    .s3-circle{
+        display: none;
+    }
 }
 
 
@@ -303,16 +309,16 @@ body {
 }
 
 .arrow-img:hover {
-    animation: arrow-rotation 0.5s linear;
+    animation: arrow-up 0.5s linear;
     animation-fill-mode: forwards;
 }
 
 .arrow-img:not( :hover ) {
-    animation: arrow-back 0.5s linear;
+    animation: arrow-down 0.5s linear;
 }
 
 
-@keyframes arrow-rotation {
+@keyframes arrow-up {
     0% {
         transform: rotate(0deg);
     }
@@ -321,12 +327,12 @@ body {
     }  
 }
 
-@keyframes arrow-back {
+@keyframes arrow-down {
     0% {
         transform: rotate(-45deg);
     }
     100% {
-        transform: rotate(1deg);
+        transform: rotate(0deg);
     }  
 }
 
