@@ -307,18 +307,28 @@ body {
     animation-fill-mode: forwards;
 }
 
+.arrow-img:not( :hover ) {
+    animation: arrow-back 0.5s linear;
+}
 
 
 @keyframes arrow-rotation {
-    0%{
+    0% {
         transform: rotate(0deg);
     }
     100% {
         transform: rotate(-45deg);
-    }
-    
+    }  
 }
 
+@keyframes arrow-back {
+    0% {
+        transform: rotate(-45deg);
+    }
+    100% {
+        transform: rotate(1deg);
+    }  
+}
 
 
 
